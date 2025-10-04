@@ -1,76 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rerun-Egy | Streetwear Brand</title>
-  <style>
-    :root {
-      --primary: #ff5252;
-      --dark: #111;
-      --light: #f9f9f9;
-      --text: #333;
-      --radius: 14px;
-    }
-    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
-    body {background: var(--light); color: var(--text);}
-    header {
-      background: var(--dark);
-      color: #fff;
-      padding: 20px 40px;
-      display:flex; justify-content:space-between; align-items:center;
-      position:sticky; top:0; z-index:1000;
-    }
-    header h1 {color: var(--primary); font-size: 24px;}
-    nav a {
-      color:#fff; text-decoration:none; margin:0 12px; font-weight:500;
-    }
-    nav a:hover {color: var(--primary);}
-    .hero {
-      background: linear-gradient(135deg,var(--primary), #ff7b54);
-      color:#fff; text-align:center; padding:80px 20px;
-    }
-    .hero h2 {font-size:42px; margin-bottom:15px;}
-    .hero p {font-size:18px; max-width:600px; margin:0 auto 20px;}
-    .btn {
-      background:#fff; color:var(--primary); padding:12px 24px;
-      border-radius: var(--radius); text-decoration:none; font-weight:700;
-    }
-    .section {padding:60px 30px; max-width:1200px; margin:auto;}
-    .section h2 {font-size:28px; margin-bottom:30px; text-align:center;}
-    .grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:24px;
-    }
-    .card {
-      background:#fff; border-radius: var(--radius);
-      box-shadow:0 6px 15px rgba(0,0,0,0.08);
-      overflow:hidden; transition: transform .2s;
-    }
-    .card:hover {transform:translateY(-5px);}
-    .card img {width:100%; height:250px; object-fit:cover;}
-    .card-content {padding:18px;}
-    .card-content h3 {margin-bottom:8px; font-size:20px;}
-    .price {color:var(--primary); font-weight:700;}
-    footer {
-      background: var(--dark); color:#aaa; text-align:center; padding:20px;
-      margin-top:40px;
-    }
-    footer a {color:var(--primary); text-decoration:none;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rerun - براند ملابس عصري</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+        }
+
+        /* السلايدر */
+        .hero {
+            margin-top: 80px;
+            height: 70vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* قسم المنتجات */
+        .products-section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #bdc3c7;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .product-info p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .add-to-cart {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #2980b9;
+        }
+
+        /* الفوتر */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- الهيدر -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">Rerun</a>
+            
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">المنتجات</a></li>
+                <li><a href="#">المجموعات</a></li>
+                <li><a href="#">عنا</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="cta-button">تسوق الآن</button>
+            </div>
+        </nav>
+    </header>
 
-  <header>
-    <h1>Rerun-Egy</h1>
-    <nav>
-      <a href="#tshirts">T-Shirts</a>
-      <a href="#hoodies">Hoodies</a>
-      <a href="#accessories">Accessories</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <!-- السلايدر الرئيسي -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Rerun براند ملابس عصري</h1>
+            <p>اكتشف أحدث صيحات الموضة وأناقة لا تنتهي مع مجموعاتنا الحصرية</p>
+            <button class="cta-button">استكشف المجموعة</button>
+        </div>
+    </section>
 
+    <!-- قسم المنتجات -->
+    <section class="products-section">
+        <div class="section-title">
+            <h2>منتجاتنا المميزة</h2>
+            <p>أفضل اختياراتنا من الملابس العصرية</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- منتج 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="product-info">
+                    <h3>تيشيرت Rerun كلاسيك</h3>
+                    <p>تيشيرت قطني عالي الجودة بتصميم مريح وأنيق</p>
+                    <div class="product-price">
+                        <span class="price">150 ج.م</span>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- منتج 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-vest"></i>
+                </div>
+                <div class="product-info">
+                    <h3>هودي Rerun</h3>
+                    <p>هودي دافئ ومريح بتصميم عصري وشعار Rerun</p>
+                    <div class="product-price">
+                        <span class="price">250 ج.م</span>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- منتج 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-hat-cowboy"></i>
+                </div>
+                <div class="product-info">
+                    <h3>كاب Rerun</h3>
+                    <p>كاب رياضي بتصميم أنيق وجودة عالية</p>
+                    <div class="product-price">
+                        <span class="price">120 ج.م</span>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <h3>Rerun - إرجع للأساسيات</h3>
+            <p>براند ملابس يوحّد بين الأناقة والراحة</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <p>&copy; 2024 Rerun. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        // تفاعلية بسيطة للأزرار
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('مرحباً بك في Rerun! هتتوجه لقسم التسوق قريباً');
+            });
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('h3').textContent;
+                alert(`تم إضافة ${productName} إلى سلة التسوق!`);
+            });
+        });
+    </script>
+</body>
+</html>
   <section class="hero">
     <h2>Streetwear for the Next Generation</h2>
     <p>Fresh drops, bold styles, and local Egyptian vibes. Discover fashion that speaks your identity.</p>

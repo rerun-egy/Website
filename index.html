@@ -3,70 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rerun-Egy | Clothing Brand</title>
+  <title>Rerun-Egy | Streetwear Brand</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdfdfd;
-      color: #222;
-      text-align: center;
+    :root {
+      --primary: #ff5252;
+      --dark: #111;
+      --light: #f9f9f9;
+      --text: #333;
+      --radius: 14px;
     }
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
+    body {background: var(--light); color: var(--text);}
     header {
-      background: black;
-      color: white;
-      padding: 20px;
+      background: var(--dark);
+      color: #fff;
+      padding: 20px 40px;
+      display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:1000;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 2px;
+    header h1 {color: var(--primary); font-size: 24px;}
+    nav a {
+      color:#fff; text-decoration:none; margin:0 12px; font-weight:500;
     }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.1rem;
-      color: #ccc;
+    nav a:hover {color: var(--primary);}
+    .hero {
+      background: linear-gradient(135deg,var(--primary), #ff7b54);
+      color:#fff; text-align:center; padding:80px 20px;
     }
-    main {
-      padding: 50px 20px;
-    }
+    .hero h2 {font-size:42px; margin-bottom:15px;}
+    .hero p {font-size:18px; max-width:600px; margin:0 auto 20px;}
     .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: 0.3s;
+      background:#fff; color:var(--primary); padding:12px 24px;
+      border-radius: var(--radius); text-decoration:none; font-weight:700;
     }
-    .btn:hover {
-      background: #444;
+    .section {padding:60px 30px; max-width:1200px; margin:auto;}
+    .section h2 {font-size:28px; margin-bottom:30px; text-align:center;}
+    .grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:24px;
     }
+    .card {
+      background:#fff; border-radius: var(--radius);
+      box-shadow:0 6px 15px rgba(0,0,0,0.08);
+      overflow:hidden; transition: transform .2s;
+    }
+    .card:hover {transform:translateY(-5px);}
+    .card img {width:100%; height:250px; object-fit:cover;}
+    .card-content {padding:18px;}
+    .card-content h3 {margin-bottom:8px; font-size:20px;}
+    .price {color:var(--primary); font-weight:700;}
     footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: #eee;
-      font-size: 0.9rem;
+      background: var(--dark); color:#aaa; text-align:center; padding:20px;
+      margin-top:40px;
     }
+    footer a {color:var(--primary); text-decoration:none;}
   </style>
 </head>
 <body>
+
   <header>
     <h1>Rerun-Egy</h1>
-    <p>Clothing Brand · Egypt</p>
+    <nav>
+      <a href="#tshirts">T-Shirts</a>
+      <a href="#hoodies">Hoodies</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <h2>Welcome to Rerun-Egy</h2>
-    <p>Fashion that speaks your style. Coming soon!</p>
-    <a href="#" class="btn">Shop Now</a>
-  </main>
+  <section class="hero">
+    <h2>Streetwear for the Next Generation</h2>
+    <p>Fresh drops, bold styles, and local Egyptian vibes. Discover fashion that speaks your identity.</p>
+    <a href="#tshirts" class="btn">Shop Now</a>
+  </section>
 
-  <footer>
-    &copy; 2025 Rerun-Egy. All rights reserved.
+  <section class="section" id="tshirts">
+    <h2>T-Shirts</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Tee+1" alt="">
+        <div class="card-content">
+          <h3>Signature Tee</h3>
+          <p class="price">350 EGP</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Tee+2" alt="">
+        <div class="card-content">
+          <h3>Logo Tee</h3>
+          <p class="price">320 EGP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hoodies">
+    <h2>Hoodies</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Hoodie+1" alt="">
+        <div class="card-content">
+          <h3>Minimal Hoodie</h3>
+          <p class="price">650 EGP</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Hoodie+2" alt="">
+        <div class="card-content">
+          <h3>Oversized Hoodie</h3>
+          <p class="price">700 EGP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="accessories">
+    <h2>Accessories</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Cap" alt="">
+        <div class="card-content">
+          <h3>Classic Cap</h3>
+          <p class="price">150 EGP</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Bag" alt="">
+        <div class="card-content">
+          <h3>Everyday Bag</h3>
+          <p class="price">250 EGP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Contact us: <a href="mailto:rerun.egy@example.com">rerun.egy@example.com</a></p>
+    <p>Follow us on Instagram: <a href="https://instagram.com/rerun_egy">@rerun_egy</a></p>
+    <p>© <span id="year"></span> Rerun-Egy. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rerun-egy - ملابس حريمي</title>
+    <title>Rerun - ملابس حريمي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,12 +14,11 @@
         }
 
         body {
-            background-color: #f5f5f0; /* بيج فاتح */
+            background-color: #f5f5f0;
             color: #333;
             padding-top: 80px;
         }
 
-        /* الهيدر الثابت */
         header {
             background: #fff;
             border-bottom: 1px solid #ddd;
@@ -44,14 +43,14 @@
         .brand-name {
             font-family: Arial Black, sans-serif;
             font-size: 2rem;
-            color: #ff66b2; /* بينك */
+            font-weight: bold;
+            color: #ff66b2;
             text-decoration: none;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        /* قائمة الهامبرجر */
         .hamburger-menu {
             position: relative;
         }
@@ -101,13 +100,11 @@
             border-bottom: none;
         }
 
-        /* الهيرو */
         .hero {
             text-align: center;
             padding: 40px 20px;
         }
 
-        /* السلايدر */
         .slider {
             max-width: 1000px;
             margin: 30px auto;
@@ -139,14 +136,13 @@
             75% { transform: translateX(-300%); }
         }
 
-        /* النص الترويجي */
         .promo-note {
-            background: #808080; /* رمادي */
+            background: #808080;
             padding: 30px;
             text-align: center;
             margin: 30px 20px;
             border-radius: 10px;
-            color: #fff; /* أبيض علشان يظهر على الرمادي */
+            color: #fff;
         }
 
         .promo-note p {
@@ -154,7 +150,6 @@
             opacity: 0.9;
         }
 
-        /* قسم المنتجات */
         .products-section {
             padding: 40px 20px;
             max-width: 1200px;
@@ -204,13 +199,6 @@
             justify-content: center;
             font-size: 3rem;
             color: #888;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .product-card h3 {
@@ -222,11 +210,10 @@
         .product-price {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #ff66b2; /* بينك */
+            color: #ff66b2;
             margin: 10px 0;
         }
 
-        /* صفحات المنتجات */
         .product-page {
             display: none;
             padding: 40px 20px;
@@ -328,7 +315,6 @@
             transform: translateY(-2px);
         }
 
-        /* صفحة البيانات */
         .checkout-page {
             display: none;
             padding: 40px 20px;
@@ -397,7 +383,6 @@
             background: #ff3385;
         }
 
-        /* السلة */
         .cart-page {
             display: none;
             padding: 40px 20px;
@@ -413,6 +398,356 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cart-item-image {
+            width: 70px;
+            height: 70px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #888;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-price {
+            color: #ff66b2;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .checkout-from-cart {
+            text-align: center;
+        }
+
+        .back-btn {
+            background: #666;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #555;
+        }
+
+        .all-products-page {
+            display: none;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="hamburger-menu">
+                <button class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="#" onclick="showSection('home')">
+                        <i class="fas fa-home"></i> الرئيسية
+                    </a>
+                    <a href="#" onclick="showSection('all-products')">
+                        <i class="fas fa-tshirt"></i> المنتجات
+                    </a>
+                    <a href="#" onclick="showSection('cart')">
+                        <i class="fas fa-shopping-cart"></i> السلة
+                    </a>
+                    <a href="https://wa.me/+201015512848" target="_blank">
+                        <i class="fab fa-whatsapp"></i> تواصل معنا
+                    </a>
+                </div>
+            </div>
+            
+            <a href="#" class="brand-name">Rerun</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="hero">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="slide">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="slide">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="slide">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="promo-note">
+                <p>احصلي على أحدث صيحات الموضة بأسعار لا تُقاوم! جودة عالية وتصميمات حصرية تناسب كل الأذواق</p>
+            </div>
+        </div>
+
+        <div class="products-section">
+            <div class="section-title">
+                <h2>المنتجات الأكثر طلباً</h2>
+            </div>
+            <div class="products-grid">
+                <!-- المنتجات تظهر هنا -->
+            </div>
+        </div>
+    </section>
+
+    <div id="all-products" class="all-products-page">
+        <button class="back-btn" onclick="showSection('home')"><i class="fas fa-arrow-right"></i> رجوع</button>
+        
+        <div class="section-title">
+            <h2>جميع المنتجات</h2>
+        </div>
+        
+        <div class="products-grid">
+            <!-- جميع المنتجات تظهر هنا -->
+        </div>
+    </div>
+
+    <div id="product1" class="product-page">
+        <button class="back-btn" onclick="showSection('home')"><i class="fas fa-arrow-right"></i> رجوع</button>
+        
+        <div class="product-gallery">
+            <div class="gallery-slider">
+                <div class="gallery-slides">
+                    <div class="gallery-slide">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="gallery-slide">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="gallery-slide">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>منتج رقم 1</h2>
+        <div class="product-price">600 جنيه</div>
+
+        <div class="size-selector">
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn active" onclick="selectSize(this)">XL</button>
+            <button class="size-btn" onclick="selectSize(this)">XXL</button>
+        </div>
+
+        <div class="action-buttons">
+            <button class="buy-btn" onclick="showCheckout('منتج رقم 1', 600)">
+                <i class="fas fa-bolt"></i> شراء سريع
+            </button>
+            <button class="cart-btn" onclick="addToCart('منتج رقم 1', 600)">
+                <i class="fas fa-cart-plus"></i> إضافة للسلة
+            </button>
+        </div>
+    </div>
+
+    <div id="checkout" class="checkout-page">
+        <button class="back-btn" onclick="showSection('home')"><i class="fas fa-arrow-right"></i> رجوع</button>
+        
+        <h2>إتمام الطلب</h2>
+        
+        <div class="form-group">
+            <label>الاسم بالكامل</label>
+            <input type="text" id="customerName" placeholder="أدخل اسمك بالكامل">
+        </div>
+
+        <div class="form-group">
+            <label>العنوان</label>
+            <input type="text" id="customerAddress" placeholder="أدخل عنوانك بالتفصيل">
+        </div>
+
+        <div class="form-group">
+            <label>رقم الهاتف</label>
+            <input type="tel" id="customerPhone" placeholder="أدخل رقم هاتفك">
+        </div>
+
+        <div class="price-summary">
+            <div class="price-item">
+                <span>سعر المنتج:</span>
+                <span id="productPrice">0 جنيه</span>
+            </div>
+            <div class="price-item">
+                <span>سعر التوصيل:</span>
+                <span>35 جنيه</span>
+            </div>
+            <div class="price-item total-price">
+                <span>المبلغ الإجمالي:</span>
+                <span id="totalPrice">0 جنيه</span>
+            </div>
+        </div>
+
+        <button class="order-btn" onclick="submitOrder()">
+            <i class="fas fa-check"></i> تأكيد الطلب
+        </button>
+    </div>
+
+    <div id="cart" class="cart-page">
+        <button class="back-btn" onclick="showSection('home')"><i class="fas fa-arrow-right"></i> رجوع</button>
+        
+        <h2>سلة التسوق</h2>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- تظهر العناصر المضافة هنا -->
+        </div>
+
+        <div class="checkout-from-cart">
+            <button class="order-btn" onclick="checkoutFromCart()">
+                <i class="fas fa-shopping-bag"></i> إتمام الشراء من السلة
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let currentProduct = { name: '', price: 0 };
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section, .product-page, .checkout-page, .cart-page, .all-products-page').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            if (sectionId === 'home') {
+                document.getElementById('home').style.display = 'block';
+            } else if (sectionId === 'cart') {
+                document.getElementById('cart').style.display = 'block';
+                updateCartDisplay();
+            } else if (sectionId === 'all-products') {
+                document.getElementById('all-products').style.display = 'block';
+            } else {
+                document.getElementById(sectionId).style.display = 'block';
+            }
+            
+            document.querySelector('.dropdown-menu').classList.remove('active');
+        }
+
+        function showProduct(productId) {
+            document.querySelectorAll('.section, .product-page, .checkout-page, .cart-page, .all-products-page').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(productId).style.display = 'block';
+        }
+
+        function selectSize(button) {
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+        }
+
+        function showCheckout(productName, productPrice) {
+            currentProduct = { name: productName, price: productPrice };
+            document.querySelectorAll('.section, .product-page, .checkout-page, .cart-page, .all-products-page').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            document.getElementById('checkout').style.display = 'block';
+            document.getElementById('productPrice').textContent = productPrice + ' جنيه';
+            document.getElementById('totalPrice').textContent = (productPrice + 35) + ' جنيه';
+        }
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            alert('تم إضافة ' + productName + ' إلى السلة!');
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: #888;">السلة فارغة</p>';
+                return;
+            }
+            
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <div class="cart-item-price">${item.price} جنيه</div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+        }
+
+        function checkoutFromCart() {
+            if (cart.length === 0) {
+                alert('السلة فارغة!');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            showCheckout('طلبات متعددة', total);
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('customerName').value;
+            const address = document.getElementById('customerAddress').value;
+            const phone = document.getElementById('customerPhone').value;
+            
+            if (!name || !address || !phone) {
+                alert('يرجى ملء جميع البيانات!');
+                return;
+            }
+            
+            const totalPrice = currentProduct.price + 35;
+            const message = `طلب جديد من Rerun:\nالاسم: ${name}\nالعنوان: ${address}\nالهاتف: ${phone}\nالمنتج: ${currentProduct.name}\nالإجمالي: ${totalPrice} جنيه`;
+            
+            const whatsappUrl = `https://wa.me/+201015512848?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            cart = [];
+            alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
+            showSection('home');
+        }
+
+        document.querySelector('.hamburger-btn').addEventListener('click', function() {
+            document.querySelector('.dropdown-menu').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.hamburger-menu')) {
+                document.querySelector('.dropdown-menu').classList.remove('active');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>x;
             padding: 15px;
             background: #fff;
             border-radius: 8px;
